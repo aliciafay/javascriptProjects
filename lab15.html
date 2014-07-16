@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Alicia Lab 15</title>
+  <meta charset="utf-8">
+
+</head>
+
+<body>
+<p> Click on a link to see a website</p>
+
+<script type="text/javascript">
+
+var urlName = function(name, url){
+this.name = name; 
+this.url = url;
+}
+
+var arr = new Array();
+arr.push(new urlName("Urban Outfitters", "www.urbanoutfitters.com"));
+arr.push(new urlName("Anthropologie", "www.anthropologie.com"));
+arr.push(new urlName("H&M", "www.hm.com"));
+arr.push(new urlName("Banana Republic", "www.bananarepublic.com"));
+arr.push(new urlName("Wet Seal", "www.wetseal.com"));
+arr.push(new urlName("Forever 21", "www.forever21.com"));
+arr.push(new urlName("Steve Madden", "www.urbanoutfitters.com"));
+arr.push(new urlName("Nordstrom", "www.urbanoutfitters.com"));
+arr.push(new urlName("Macys", "www.macys.com"));
+arr.push(new urlName("Bloomingdales", "www.urbanoutfitters.com"));
+arr.push(new urlName("Saks", "www.urbanoutfitters.com"));
+arr.push(new urlName("Teavana", "www.urbanoutfitters.com"));
+
+function timeoutFunc() { 
+var now = new Date();
+var linkToDisplay = now.getMinutes() % arr.length;
+document.getElementById("linkChange").href = arr[linkToDisplay].url;
+document.getElementById("linkChange").innerHTML = arr[linkToDisplay].name;
+setTimeout(timeoutFunc, (60 * 1000));
+};
+
+setTimeout(timeoutFunc , 0);
+
+</script>
+
+<a id="linkChange"></a>
+
+</body>
+
+</html>

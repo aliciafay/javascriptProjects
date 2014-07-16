@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Alicia Leslie Lab 6</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script type="text/javascript">
+myMovies = Array();
+
+movie1 = ["Iron Man 3", "Action", "R", "$12.99"];
+movie2 = ["The Croods", "Animation", "PG", "$11.99"];
+movie3 = ["Gravity", "Drama", "PG-13", "$15.99"];
+
+myMovies.push(movie1);
+myMovies.push(movie2);
+myMovies.push(movie3);
+
+var count = myMovies.length;
+
+document.write(" Number of movies in inventory: " + count + "<br>");
+document.write(" Title: " + myMovies[0][0] + "<br>");
+document.write(" Genre: " + myMovies[0][1] + "<br>");
+document.write(" Rating: " + myMovies[0][2] + "<br>");
+document.write(" Price: " + myMovies[0][3] + "<br><br>");
+document.write(" Title: " + myMovies[1][0] + "<br>");
+document.write(" Genre: " + myMovies[1][1] + "<br>");
+document.write(" Rating: " + myMovies[1][2] + "<br>");
+document.write(" Price: " + myMovies[1][3] + "<br><br>");
+document.write(" Title: " + myMovies[2][0] + "<br>");
+document.write(" Genre: " + myMovies[2][1] + "<br>");
+document.write(" Rating: " + myMovies[2][2] + "<br>");
+document.write(" Price: " + myMovies[2][3] + "<br><br>");
+
+document.write("Pop and display the popped movie.<br />");
+var poppedMovie_first = myMovies.pop();
+document.write(" Title: " + poppedMovie_first[0] + "<br>");
+document.write(" Genre: " + poppedMovie_first[1] + "<br>");
+document.write(" Rating: " + poppedMovie_first[2] + "<br>");
+document.write(" Price: " + poppedMovie_first[3] + "<br><br>");
+document.write(" Number of movies in inventory: " + myMovies.length + "<br><br>");
+
+document.write("Pop another one and display the popped movie.<br />");
+var poppedMovie = myMovies.pop();
+document.write(" Title: " + poppedMovie[0] + "<br>");
+document.write(" Genre: " + poppedMovie[1] + "<br>");
+document.write(" Rating: " + poppedMovie[2] + "<br>");
+document.write(" Price: " + poppedMovie[3] + "<br><br>");
+document.write(" Number of movies in inventory: " + myMovies.length + "<br><br>");
+
+document.write("Unshift the last popped movie and display the inventory.<br />");
+count = myMovies.unshift(poppedMovie);
+document.write(" Title: " + myMovies[0][0] + "<br>");
+document.write(" Genre: " + myMovies[0][1] + "<br>");
+document.write(" Rating: " + myMovies[0][2] + "<br>");
+document.write(" Price: " + myMovies[0][3] + "<br><br>");
+document.write(" Title: " + myMovies[1][0] + "<br>");
+document.write(" Genre: " + myMovies[1][1] + "<br>");
+document.write(" Rating: " + myMovies[1][2] + "<br>");
+document.write(" Price: " + myMovies[1][3] + "<br><br>");
+document.write(" Number of movies in inventory: " + myMovies.length + "<br><br>");
+
+document.write("Do another pop and display the popped movie.<br />");
+poppedMovie = myMovies.pop();
+document.write(" Title: " + poppedMovie[0] + "<br>");
+document.write(" Genre: " + poppedMovie[1] + "<br>");
+document.write(" Rating: " + poppedMovie[2] + "<br>");
+document.write(" Price: " + poppedMovie[3] + "<br><br>");
+document.write(" Number of movies in inventory: " + myMovies.length + "<br><br>");
+
+
+document.write("Display of Inventory:<br />");
+document.write(" Title: " + myMovies[0][0] + "<br>");
+document.write(" Genre: " + myMovies[0][1] + "<br>");
+document.write(" Rating: " + myMovies[0][2] + "<br>");
+document.write(" Price: " + myMovies[0][3] + "<br><br>");
+
+
+document.write("Push the first popped and display the inventory.<br />");
+count = myMovies.push(poppedMovie_first);
+document.write(" Title: " + myMovies[0][0] + "<br>");
+document.write(" Genre: " + myMovies[0][1] + "<br>");
+document.write(" Rating: " + myMovies[0][2] + "<br>");
+document.write(" Price: " + myMovies[0][3] + "<br><br>");
+document.write(" Title: " + myMovies[1][0] + "<br>");
+document.write(" Genre: " + myMovies[1][1] + "<br>");
+document.write(" Rating: " + myMovies[1][2] + "<br>");
+document.write(" Price: " + myMovies[1][3] + "<br><br>");
+document.write(" Number of movies in inventory: " + myMovies.length + "<br><br>");
+
+document.write("Shift and display the shifted movie.<br />");
+poppedMovie = myMovies.shift();
+document.write(" Title: " + poppedMovie[0] + "<br>");
+document.write(" Genre: " + poppedMovie[1] + "<br>");
+document.write(" Rating: " + poppedMovie[2] + "<br>");
+document.write(" Price: " + poppedMovie[3] + "<br><br>");
+document.write(" Number of movies in inventory: " + myMovies.length + "<br><br>");
+
+document.write("Display of Inventory:<br />");
+document.write(" Title: " + myMovies[0][0] + "<br>");
+document.write(" Genre: " + myMovies[0][1] + "<br>");
+document.write(" Rating: " + myMovies[0][2] + "<br>");
+document.write(" Price: " + myMovies[0][3] + "<br><br>");
+
+
+</script>
+</body>
+</html>

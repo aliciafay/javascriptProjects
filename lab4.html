@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Alicia Lab 4</title> <meta charset="utf-8">
+<script type="text/javascript">
+function amount(bill, tip) {
+var newTip = bill * (1+(tip/100));
+document.write("<h1>Bill: $", bill, "<br>");
+document.write("Tip: ", tip, "%<br>");
+document.write("Total: $", newTip, "</h1>");
+}
+var bill = prompt("Please enter your bill amount","");
+var tip = prompt("Please enter the percent you want to tip","");
+amount(bill, tip);
+</script>
+</head>
+<body>
+</body>
+</html>

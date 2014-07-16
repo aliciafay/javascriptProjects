@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Alicia Lab 10</title>
+  <meta charset="utf-8">
+<style type="text/css">
+	.grey {background-color: grey ;}
+</style>
+<script type="text/javascript">
+  function useInnerHTML() {
+     var theDiv = document.getElementById("div1");
+     theDiv.innerHTML = "<p> That movie," + movie1 + ",is a great movie</p>";
+  }
+  </script>
+</head>
+
+<body>
+  <div id="div1" class="grey">Movie you like?</div>
+  
+ <div style="background:blue" id="movietext">
+<p>Thanks for sharing your movie<br>This is my favorite movie</p>
+</div>
+        
+<script type="text/javascript">
+  
+  var movie1 = prompt("What movie do you like?");
+  
+useInnerHTML();
+
+var divId = document.getElementById("movietext");
+var parent = divId.parentNode;
+
+var movie2 = prompt("One of my favorites","My Neighbor Totoro");
+	
+var anotherMovie = document.createTextNode(movie2);
+	
+var newH1 = document.createElement("h1");
+	newH1.appendChild(anotherMovie);
+	document.body.appendChild(newH1);
+			
+var moviediv2 = document.createElement("div");
+	moviediv2.className="grey";
+	
+moviediv2.id = "movie2";
+moviediv2.innerHTML = "Here is two characters from my favorite movie!<br><img src='totoro1.jpg' width='300px'>";
+document.body.appendChild(moviediv2)
+
+</script>
+</body>
+</html>

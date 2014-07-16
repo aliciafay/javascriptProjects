@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Alicia Lab 20</title>
+  <meta charset="utf-8">
+
+<script type="text/javascript">
+var events = new Array("9/11", "Sandy");
+var nine11 = new Array("Belarus", "Germany", "New Zealand");
+var nine11imgs = new Array("911belarus.jpg", "911germany.jpg", "911nz.jpg"); 
+var sandy = new Array("Sandy_NYC1", "Sandy_NYC2", "Sandy_NYC3");
+var sandyimgs = new Array("sandy1.jpg", "sandy2.jpg", "sandy3.jpg"); 
+
+function loadEvents() {
+	for (var i = 0; i < events.length; i++) {
+		document.getElementById("event").add(new Option(events[i], i), null);
+	}
+}
+
+function loadDisaster() {
+	document.getElementById("event2").options.length = 0;
+	if (document.getElementById("event").options.selectedIndex == 1) {
+		for (var i = 0; i < nine11.length; i++) {
+			document.getElementById("event2").add(new Option(nine11[i], i), null);
+		}
+	}
+	if (document.getElementById("event").options.selectedIndex == 2) {
+		for (var i = 0; i < sandy.length; i++) {
+			document.getElementById("event2").add(new Option(sandy[i], i), null);
+		}
+	}
+}
+
+function loadImage() {
+	if (document.getElementById("event").options.selectedIndex == 1) {
+		document.getElementById("image").contentWindow.document.body.innerHTML = "<img src='images/" +
+			nine11imgs[document.getElementById("event2").options.selectedIndex] +
+			"' height='300' />";
+	}
+		if (document.getElementById("event").options.selectedIndex == 2) {
+		document.getElementById("image").contentWindow.document.body.innerHTML = "<img src='images/" +
+			sandyimgs[document.getElementById("event2").options.selectedIndex] +
+			"' height='300' />";
+	}
+}
+
+</script>
+
+</head>
+
+<body onload="javascript:loadEvents();">
+
+<select id="event" onchange="javascript:loadDisaster();">
+<option value="event">Event</option>
+</select>
+
+<select id="event2" onchange="javascript:loadImage();">
+
+</select>
+
+<br />
+
+<iframe id="image" width="600" height="400" />
+
+</body>
+
+</html>

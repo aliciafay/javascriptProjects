@@ -1,0 +1,51 @@
+<script type="text/javascript">
+var services = {"Website": [], "Graphic Design": []};
+
+var Product = function (scope, cost, maintenance, time) {
+	this.scope = scope;
+	this.cost = cost;
+	this.maintenance = maintenance;
+	this.time = time;
+};
+
+function displayProduct() {
+	document.write("<td>" + this.scope + "</td>");
+	document.write("<td>" + this.cost + "</td>");
+	document.write("<td>" + this.maintenance + "</td>");
+	document.write("<td>" + this.time + "</td>");
+};
+
+var webProduct1 = new Product("Home Page", "$500", "Included", "1 week");
+webProduct1.display = displayProduct;
+var webProduct2 = new Product("Full Page", "$1000", "Included", "1 month");
+webProduct2.display = displayProduct;
+var webProduct3 = new Product("Two Full Pages", "$2000", "Included", "3 month");
+webProduct3.display = displayProduct;
+var webProduct4 = new Product("Logo", "$300", "Not Included", "1 week");
+webProduct4.display = displayProduct;
+var webProduct5 = new Product("Icon", "$200", "Not Included", "1 week");
+webProduct5.display = displayProduct;
+services["Website"][0] = webProduct1;
+services["Website"][1] = webProduct2;
+services["Website"][2] = webProduct3;
+services["Graphic Design"][0] = webProduct4;
+services["Graphic Design"][1] = webProduct5;
+
+var headers = new Array("Scope", "Cost", "Maintenance", "Time");
+
+document.write("<table><tr><th> Services </th>");
+for (i=0; i<headers.length; i++) {
+document.write("<th>" + headers[i] + "</th>");
+}
+document.write("</tr>");
+for (var j in services) {
+document.write("<tr><td><b>" + j + "</b></td>");
+for (var k = 0; k < services[j].length; k++) {
+if (k != 0) document.write("<tr><td></td>");
+services[j][k].display();
+document.write("</tr>");
+}
+document.write("</tr>");
+}
+document.write("</table>");
+</script>

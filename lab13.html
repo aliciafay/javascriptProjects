@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Alicia Lab 13</title>
+  <meta charset="utf-8">
+
+</head>
+
+<body>
+
+<script type="text/javascript">
+
+var r = Math.floor(Math.random() * 255 + 1);
+r = r.toString(16);
+if (r.length < 2) {
+	r = "0" + r;
+	}
+var g = Math.floor(Math.random() * 255 + 1);
+g = g.toString(16);
+if (g.length < 2) {
+	g = "0" + g;
+	}
+var b = Math.floor(Math.random() * 255 + 1);
+b = b.toString(16);
+if (b.length < 2) {
+	b = "0" + b;
+	}
+document.write("Generating Random Color<br/>");
+document.write("The color is: <br/>" + r + g + b);
+document.body.style.backgroundColor = "#" + r + g + b;
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Alicia Lab 12</title>
+  <meta charset="utf-8">
+<style type="text/css">
+
+</style>
+</head>
+
+<body onload="javascript:regexTest();" style="background-color: #4785FF;">
+<script type="text/javascript">
+
+function regexTest() {
+var reg_exp = /[A-Za-z0-9_]/;
+var num = /^[^0-9]+$/;
+var string2 = /[A-Z][a-z]+[ ]/;
+var random = /[#][0-9][0-9][0-9][0-9][0-9][.][0-9]/;
+
+var input = "";
+
+while (input != "stop") {
+
+	input = prompt("Enter a Text (stop to exit)", "stop");
+		document.getElementById("text2").innerHTML =  input;
+	
+	if (reg_exp.test(input)) {
+		document.getElementById("character").innerHTML = "It's a match!";
+	} else {
+		document.getElementById("character").innerHTML = "No match!";
+	}
+	
+		if (num.test(input)) {
+		document.getElementById("number").innerHTML = "It's a match!";
+	} else {
+		document.getElementById("number").innerHTML = "No match!";
+	}
+	
+		if (string2.test(input)) {
+		document.getElementById("uppercase").innerHTML = "It's a match!";
+	} else {
+		document.getElementById("uppercase").innerHTML = "No match!";
+	}
+	
+		if (random.test(input)) {
+		document.getElementById("digits").innerHTML = "It's a match!";
+	} else {
+		document.getElementById("digits").innerHTML = "No match!";
+	}
+}
+}
+</script>
+This text is: <div id="text2"></div><br />
+Match a string that contains at least one character in A-Z, a-z, 0-9 and _
+<div id = "character"></div><br />
+Match a string that does not contain a number between 0 and 9
+<div id = "number"></div><br />
+Search for an uppercase letter, folowed by one or more lowercase letters, followed by a space.
+<div id = "uppercase"></div><br />
+Find a # sign, followed by exactly 5 repeating digits, a period, and another digit
+<div id = "digits"></div><br />
+
+</body>
+
+</html>

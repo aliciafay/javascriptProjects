@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Alicia Midterm</title>
+  <meta charset="utf-8">
+</head>
+<body>	
+<div ondblclick='javascript:displayList(cruisearray);' style='width: 100%; height: 100%;' id='welcome'>
+<center>
+<h1>Welcome!</h1>
+<p> <img src="totoro1.jpg" width="200px" /> </p>
+</center>
+
+
+<script type="text/javascript">
+
+var colors = ["Red", "Green", "Blue", "Yellow", "Purple", "Grey", "White"];
+var counter = 0;
+
+var cruise = function(CruiseDate, CruiseDest, CruiseDesc, CruiseUrl, ShipName, ShipDesc, ShipUrl, Price) {
+	this.CruiseDate = CruiseDate;
+	this.CruiseDest = CruiseDest;
+	this.CruiseDesc = CruiseDesc;
+	this.CruiseUrl = CruiseUrl;
+	this.ShipName = ShipName;
+	this.ShipDesc = ShipDesc;
+	this.ShipUrl = ShipUrl;
+	this.Price = Price;
+};
+
+var cruise1 = new cruise("Feb 6 2014", "4 Night Western Caribbean Cruise", "No one knows the Caribbean better than we do. After all, it is our middle name. And when it comes to beautiful beaches and sparkling blue waters, the Caribbean is really in a league of its own. There are countless adventures within reach on your cruise vacation.",
+"http://www.royalcaribbean.com/findacruise/cruiseDetails/itineraryAndPricing.do?&packageCode=BR04S072&sailDate=1140206&cruiseType=CO",
+"Brilliance Of The Seas", "More outside cabins, glass elevators facing the sea, nine-story glass-constructed Centrum, state-of-the-art technology and of course, our Gold Anchor Service® that is second to none, are just a few of the ways this cruise ship will make your journey special and unique. ",
+"http://www.royalcaribbean.com/findacruise/ships/class/ship/home.do?shipClassCode=RD&shipCode=BR&br=R", "$344");
+
+var cruise2 = new cruise("Feb 12 2014", "4-Night Bahamian Cruise", "The Disney Wonder is a magnificent, family-friendly Disney Cruise Line ship that takes Guests of all ages on exciting vacations to gorgeous ports of call in the Bahamas. ",
+"http://disneycruise.disney.go.com/reservations/customize?execution=e1s3", "Disney Wonder", "The Disney Wonder is a ship that is distinguished for its sophisticated design and modern innovation. Along with its sister ship, the Disney Magic, the Disney Wonder was specially constructed with families in mind, combining sleek style with a splash of fun. Today, it is one of the most revered and recognizable ocean liners in the world, inspiring awe wherever it pulls into port.", "http://disneycruise.disney.go.com/ships-activities/ships/wonder/", "$1,077.28");
+
+var cruise3 = new cruise("Feb 3 2014", "5 Day Eastern Caribbean", "Soak in the sunny, serene rhythms of the Eastern Caribbean’s beautiful sun-dappled islands. A Carnival cruise to the Eastern Caribbean sails to some of the region’s most storied isles, each ringed by rainbow-hued coral gardens. Dig your feet in silky sand, float in azure seas, and let your cares melt away in the Eastern Caribbean.",
+"http://www.carnival.com/core/cruisedetails.aspx?embkCode=MIA&itinCode=ECC&durDays=5&shipCode=VI&subRegionCode=CE&numGuests=1&showDbl=False&isOver55=N&isPastGuest=N&stateCode=&isMilitary=N&dayOfWeek=Mon&sailDate=02032014&sailingID=66838&sailingSearchParams=dat:,datFrom:022014,datTo:022014,dest:C,dur:,embkCode:,pageNumber:1,pageSize:5,PastGuest:,Senior:,shipCode:,sort:FromPrice,StateCode:,numGuests:1,offersOnly:false,tgo:,Military:,length:5,bypass:t,tierCode:,",
+"Carnival Victory", "Declare victory against the usual, boring vacations as you sit back and take in everything else this ship has to offer: master performances in the two show lounges, quiet time at Serenity Adult-Only Retreat or the library, and delicious food and drink practically wherever you look, all up and down the ship. When you’re cruising Carnival Victory, you’re winning." ,
+"http://www.carnival.com/cruise-ships/carnival-victory.aspx",
+"$398.00");
+
+var cruisearray = new Array(cruise1, cruise2, cruise3);
+
+function displayList(arr) {
+    var insert = "<center><table id='cruises'><tr><td>Depart</td><td>Destination</td><td>Ship</td><td>Price</td></tr>";
+    for (var i = 0; i < arr.length; i++) {
+    	insert += "<tr><td>" + arr[i].CruiseDate + "</td><td><a href='javascript:loadDesc(\"" + arr[i].CruiseDesc +
+    				   "\", \"" + arr[i].CruiseUrl + "\");'>" + arr[i].CruiseDest + "</a>" +
+    				   "</td><td><a href='javascript:loadShip(\"" + arr[i].ShipDesc +
+    				   "\", \"" + arr[i].ShipUrl + "\");'>" + arr[i].ShipName + "</a></td><td>" + arr[i].Price + "</td></tr>";
+    }
+    insert += "</table></center>";
+    document.getElementById("cruises").innerHTML = insert;
+}
+
+function loadDesc(desc, url) {
+	myWindow.close();
+	counter++;
+	var welcomeDiv = document.getElementById("welcome");
+	var newDiv = document.createElement("div");
+	newDiv.style.backgroundColor = colors[counter];
+	newDiv.innerHTML = desc + " <a href='javascript:popupWindow(\"" + url + "\");'>Click for more info</a>.";
+	welcomeDiv.insertBefore(newDiv, document.getElementById('cruises'));
+}
+
+function loadShip(ShipDesc, ShipUrl) {
+	myWindow.close();
+	counter++;
+	var welcomeDiv = document.getElementById("welcome");
+	var newDiv = document.createElement("div");
+	newDiv.style.backgroundColor = colors[counter];
+	newDiv.innerHTML = ShipDesc + " <a href='" + ShipUrl + "' target='_blank'>Click for more info</a>.";
+	welcomeDiv.insertBefore(newDiv, document.getElementById('cruises').nextSibling);
+}
+
+function popupWindow(url) {
+	newWindow = window.open(url, "Win", "width=400,height=300,scrollbars=1", "Resizeable");
+	newWindow.focus();
+}
+
+myWindow = window.open("", "Win", "height=170,width=200,left=200,top=200", "Resizable", "Dependent");
+myWindow.document.write("<body style='background:green'>");
+myWindow.document.write("<script language='JavaScript'>");
+myWindow.ondblclick = function('javascript:displayList(cruisearray);' style='width: 100%; height: 100%;' id='welcome');
+
+myWindow.document.write("function loadURL(url) {");
+myWindow.document.write("window.opener.location.href = url;");
+myWindow.document.write("window.close();");
+
+myWindow.document.write("}");
+myWindow.document.write("<\/script>");
+myWindow.document.write("<p>Hot Deals on Cruises</p>");
+myWindow.document.write("<p></p>");
+
+myWindow.document.write("<a href='javascript:loadURL(\"http://www.royalcaribbean.com/home.do\");'>Royal Caribbean</a><br>");
+myWindow.document.write("<a href='javascript:loadURL(\"http://disneycruise.disney.go.com/\");'>Disney Cruises</a><br>");
+myWindow.document.write("<a href='javascript:loadURL(\"http://www.carnival.com/bookingengine/sailingsearch/search2?dest=C&bypass=t&datFrom=022014&datTo=022014&numGuests=1\");'>Carnival</a><br>");
+
+
+window.onunload = function() { myWindow.close() };
+
+ </script>
+ 
+ <div id="cruises"></div>
+ </div>
+ 
+
+</body>
+</html>

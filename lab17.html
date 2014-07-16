@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Alicia Lab 17</title>
+  <meta charset="utf-8">
+
+</head>
+
+<body>
+
+<p> Please select the features for your window </p>
+<table>
+<tr>
+<td>
+URL:
+</td>
+<td>
+<input type="text" id="url" />
+</td>
+</tr>
+<tr>
+<td>
+Toolbar:
+</td>
+<td>
+<input type="checkbox" id="tool" />
+</td>
+</tr>
+<tr>
+<td>
+Location:
+</td>
+<td>
+<input type="checkbox" id="loc" />
+</td>
+</tr>
+<tr>
+<td>
+Directories:
+</td>
+<td>
+<input type="checkbox" id="dir" />
+</td>
+</tr>
+<tr>
+<td>
+Status:
+</td>
+<td>
+<input type="checkbox" id="sta" />
+</td>
+</tr>
+<tr>
+<td>
+Menubar:
+</td>
+<td>
+<input type="checkbox" id="men" />
+</td>
+</tr>
+<tr>
+<td>
+Scrollbars:
+</td>
+<td>
+<input type="checkbox" id="scr" />
+</td>
+</tr>
+<tr>
+<td>
+Resizable:
+</td>
+<td>
+<input type="checkbox" id="res" />
+</td>
+</tr>
+<tr>
+<td>
+Width:
+</td>
+<td>
+<input type="text" id="wid" />
+</td>
+</tr>
+<tr>
+<td>
+Height:
+</td>
+<td>
+<input type="text" id="hei" />
+</td>
+</tr>
+<tr>
+<td>
+<input type="button" id="submit" value="Submit" onclick="javascript:onSubmit();" />
+<input type="button" id="reset" value="Reset" />
+
+</table>
+<script type="text/javascript">
+
+function onSubmit() {
+var options = "";
+if (document.getElementById("tool").checked) {
+	options += "toolbar=yes,";
+} else {
+	options += "toolbar=no,";
+}
+if (document.getElementById("loc").checked) {
+	options += "location=yes,";
+} else {
+	options += "location=no,";
+}
+if (document.getElementById("dir").checked) {
+	options += "directories=yes,";
+} else {
+	options += "directories=no,";
+}
+if (document.getElementById("sta").checked) {
+	options += "status=yes,";
+} else {
+	options += "status=no,";
+}
+if (document.getElementById("men").checked) {
+	options += "menubar=yes,";
+} else {
+	options += "menubar=no,";
+}
+if (document.getElementById("scr").checked) {
+	options += "scrollbars=yes,";
+} else {
+	options += "scrollbars=no,";
+}
+if (document.getElementById("res").checked) {
+	options += "resizable=yes,";
+} else {
+	options += "resizable=no,";
+}
+if (document.getElementById("wid").value!="") {
+	options += "width=" + document.getElementById("wid").value;
+}
+if (document.getElementById("hei").value!="") {
+	options += "height=" + document.getElementById("hei").value;
+}
+console.log(options.substr(0, options.length - 1));
+
+window.open(document.getElementById("url").value, "MsgWindow", options.substr(0, options.length - 1));
+
+
+}
+
+</script>
+
+</body>
+
+</html>

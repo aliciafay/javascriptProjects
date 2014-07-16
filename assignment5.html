@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Alicia Leslie Assignment 5</title>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+
+	var PopUp = null;
+
+	function PopUpWindow(url) {
+
+	 PopUp=window.open(url,null,"height=300,width=500,left=400,top=100,scrollbars,status,resizable,dependent", config='toolbar=no, menubar=no,location=no);
+
+
+	 PopUp.focus();
+	}
+
+
+	function closePop() {
+
+	  if (PopUp != null) {
+	    PopUp.close();
+	    PopUp = null;
+	  }
+	}
+  </script>
+</head>
+<body>
+<p>
+<a href="javascript:PopUpWindow('js17opex4r.html')">Load a file</a>
+</p>
+<p>
+<a href="javascript:PopUpWindow('http://www.epinions.com')">Load a URL</a>
+</p>
+<p>
+<a href="javascript:closePop()">Close Popup</a>
+</p>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Alicia Lab 18</title>
+  <meta charset="utf-8">
+
+<script type="text/javascript">
+
+messages = new Array("Welcome to my page", "Welcome again", "You are back again", "Do you like my page", "I am happy to see you back", 
+"How many times is it now", "What is your name", "My page is very exciting", "Are you still there", "Thanks for coming");
+
+var counter = 1;
+if (document.cookie.length == 0) {
+	document.cookie = "counter=1";
+	counter = 1;
+	console.log("TEST " + document.cookie);
+} else {
+	counter = parseInt(document.cookie.match(/^counter=(\d+)/)[1]);
+	counter++;
+	
+	if (counter == 11) {
+		counter = 1;
+	}
+	
+	document.cookie = "counter=" + counter;
+}
+
+function resetCounter() {
+	document.cookie = "counter=0";
+	location.reload();
+}
+
+
+</script>
+
+</head>
+
+<body>
+<script type="text/javascript">
+document.write("<center>");
+document.write('<input type="button" value="Revisit Page" onclick="javascript:location.reload();" />');
+document.write('<input type="button" value="Reset Counter" onclick="javascript:resetCounter();" />');
+document.write("<br /><br />");
+document.write("You have visited " + counter + " time(s). ");
+document.write(messages[counter-1]);
+document.write("</center>");
+</script>
+
+
+</body>
+
+</html>

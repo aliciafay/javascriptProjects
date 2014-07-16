@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Alicia Lab 16</title>
+  <meta charset="utf-8">
+
+</head>
+
+<body>
+<p>Calculator</p>
+<br />
+<form name="Calc">
+<table border = 5>
+<tr>
+<td>
+<input type="text" name="aliciaBot" Size="18">
+<br />
+</td>
+</tr>
+<tr>
+<td>
+<input type="button" name="one"   value="1" OnClick="Calc.aliciaBot.value += '1'">
+<input type="button" name="two"   value="2" OnCLick="Calc.aliciaBot.value += '2'">
+<input type="button" name="three" value="3" OnClick="Calc.aliciaBot.value += '3'">
+<input type="button" name="add"  value="+" OnClick="Calc.aliciaBot.value += ' + '">
+<br />
+<input type="button" name="four"  value="4" OnClick="Calc.aliciaBot.value += '4'">
+<input type="button" name="five"  value="5" OnCLick="Calc.aliciaBot.value += '5'">
+<input type="button" name="six"   value="6" OnClick="Calc.aliciaBot.value += '6'">
+<input type="button" name="subtract" value="-" OnClick="Calc.aliciaBot.value += ' - '">
+<br />
+<input type="button" name="seven" value="7" OnClick="Calc.aliciaBot.value += '7'">
+<input type="button" name="eight" value="8" OnCLick="Calc.aliciaBot.value += '8'">
+<input type="button" name="nine"  value="9" OnClick="Calc.aliciaBot.value += '9'">
+<input type="button" name="multiply" value="x" OnClick="Calc.aliciaBot.value += '*'">
+<br />
+<input type="button" name="clear" value="c" OnClick="Calc.aliciaBot.value = ''">
+<input type="button" name="zero"  value="0" OnClick="Calc.aliciaBot.value += '0'">
+<input type="button" name="equal"  value="=" OnClick="Calc.aliciaBot.value = eval(Calc.aliciaBot.value)">
+<input type="button" name="divide"   value="/" OnClick="Calc.aliciaBot.value += '/'">
+<br />
+</td>
+</tr>
+</table>
+</form>
+
+</body>
+
+</html>

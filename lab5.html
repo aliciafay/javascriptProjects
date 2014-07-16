@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Alicia Leslie Lab 5</title>
+<meta charset="utf-8">
+<script type="text/javascript">
+function movies(the_genre, the_title, the_rating, the_price) {
+this.genre = the_genre;
+this.title = the_title;
+this.rating = the_rating;
+this.price = the_price;
+}
+var movieone = new movies("Action","Iron Man 3", "PG-13", 18.99);
+function displayMovie() {
+document.write("Genre: " + this.genre + "<br>");
+document.write("Title: " + this.title + "<br>");
+document.write("Rating: " + this.rating + "<br>");
+document.write("Price: " + this.price + "<br>");
+}
+movieone.getMovie = displayMovie;
+
+var movietwo = new movies("Animation", "The Croods", "PG", 13.99);
+movietwo.displayMovie = displayMovie;
+</script>
+</head>
+<body>
+<script type="text/javascript">
+document.write("<H2>Movie 1</H2>");
+movieone.getMovie();
+document.write("<H2>Movie 2</H2>");
+movietwo.displayMovie();
+
+</script>
+</body>
+</html>

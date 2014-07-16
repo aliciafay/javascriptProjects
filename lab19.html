@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Alicia Lab 19</title>
+  <meta charset="utf-8">
+
+<script type="text/javascript">
+
+function showBelarus() {
+	document.getElementById("image").src = "images/911belarus.jpg";
+	document.getElementById("txt").innerHTML = "Minks, Belarus";
+}
+
+function showRegular() {
+	document.getElementById("image").src = "images/911.jpg";
+	document.getElementById("txt").innerHTML = "New York";
+}
+
+function showGermany() {
+	document.getElementById("image").src = "images/911germany.jpg";
+	document.getElementById("txt").innerHTML = "Munich, Germany";
+}
+
+function showNZ() {
+	document.getElementById("image").src = "images/911nz.jpg";
+	document.getElementById("txt").innerHTML = "New Zealand";
+}
+
+</script>
+
+</head>
+
+<body>
+<table>
+<tr><td>
+<p style="color: orange;">9/11 in Places:</p>
+<ul style="color: blue;">
+<li onmouseover="javascript:showBelarus();" onmouseout="javascript:showRegular();">Belarus</li>
+<br /><br /><br />
+<li onmouseover="javascript:showGermany();" onmouseout="javascript:showRegular();">Germany</li>
+<br /><br /><br />
+<li onmouseover="javascript:showNZ();" onmouseout="javascript:showRegular();">New Zealand</li>
+</ul>
+<p id="txt"></p>
+</td><td>
+<div align="center">
+<p>
+<img id="image" src="images/911.gif" height="300" />
+</p>
+</div>
+</td></tr></table>
+</body>
+
+</html>

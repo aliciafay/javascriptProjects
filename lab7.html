@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Alicia Leslie Lab 7</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script type="text/javascript">
+
+var movies = {"Comedy": [], "Action": [], "Drama": []};
+
+var movietype = function (title, rating, price) {
+	this.title = title;
+	this.rating = rating;
+	this.price = price;
+};
+
+function displaymovietype() {
+	document.write("<td> Title: " + this.title + "<br />");
+	document.write("Rating: " + this.rating + "<br />");
+	document.write("Price: " + this.price + "</td>");
+};
+
+var comedy1 = new movietype("Don Jon", "PG-13", "$12.99");
+comedy1.display = displaymovietype;
+var comedy2 = new movietype("Scary Movie", "R", "$12.99");
+comedy2.display = displaymovietype;
+var comedy3 = new movietype("The Heat", "PG-13", "$15.99");
+comedy3.display = displaymovietype;
+var action1 = new movietype("Star Trek", "PG", "$10.99");
+action1.display = displaymovietype;
+var action2 = new movietype("Iron Man", "PG-13", "$15.99");
+action2.display = displaymovietype;
+var action3 = new movietype("World War Z", "R", "$13.99");
+action3.display = displaymovietype;
+var drama1 = new movietype("The Great Gasby", "PG-13", "$14.99");
+drama1.display = displaymovietype;
+var drama2 = new movietype("Gravity", "PG-13", "$11.99");
+drama2.display = displaymovietype;
+var drama3 = new movietype("Prisoners", "R", "$12.99");
+drama3.display = displaymovietype;
+movies["Comedy"][0] = comedy1;
+movies["Comedy"][1] = comedy2;
+movies["Comedy"][2] = comedy3;
+movies["Action"][0] = action1;
+movies["Action"][1] = action2;
+movies["Action"][2] = action3;
+movies["Drama"][0] = drama1;
+movies["Drama"][1] = drama2;
+movies["Drama"][2] = drama3;
+
+var headers = new Array("Comedy", "Action", "Drama");
+
+document.write("<table><tr>");
+for (i=0; i<headers.length; i++) {
+document.write("<th>" + headers[i] + "</th>");
+}
+document.write("</tr>");
+for (var j in movies) {
+if (k != 0) document.write("<tr>");
+for (var k = 0; k < movies[j].length; k++) {
+movies[j][k].display();
+}
+document.write("</tr>");
+}
+document.write("</table>");
+
+
+
+document.write("</table>");
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Alicia Lab 12</title>
+  <meta charset="utf-8">
+<style type="text/css">
+	div {
+		width: 50%;
+		height: 100px;
+		padding: 10px;
+		margin: 10px 0;
+	}
+	
+	#yellow {
+		background-color: #098657;
+	}
+	
+	.blue { 
+		background-color: #457688;
+		border: 2px #000000 solid;
+	}
+</style>
+</head>
+
+<body>
+<script type="text/javascript">
+
+function textClicked(h1) {
+	var div = document.getElementById("yellow");
+	var parent = div.parentElement;
+	var movie = prompt("Enter a movie:");
+	var newElement = document.createElement("div");
+	newElement.className = "blue";
+	newElement.innerHTML = "<h1>" + movie + "</h1>";
+	parent.insertBefore(newElement, div);
+}
+
+</script>
+
+<div id="yellow"><h1 onclick="javascript:textClicked(this);">Click me to add a new movie</h1>
+</div>
+</body>
+
+</html>

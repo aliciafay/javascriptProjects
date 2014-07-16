@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Alicia Lab 21</title>
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <meta charset="utf-8">
+
+<script type="text/javascript">
+
+$(document).ready(function() { $(".answer").css("display", "none");
+$("#main dt").click(function toggle() {
+	if ($(this).next().css("display") == "none") {
+		showAnswer($(this).next());
+	} else {
+		hideAnswer($(this).next());	
+	}
+});
+ });
+
+function showAnswer(element) {
+	$(element).fadeIn();
+}
+
+function hideAnswer(element) {
+	$(element).fadeOut();
+}
+
+</script>
+
+</head>
+
+<body id="main">
+
+<dl>
+  <dt>Question 1 (click for answer)</dt>
+    <dd class="answer">Answer 1</dd>
+  <dt>Question 2 (click for answer)</dt>
+    <dd class="answer">Answer 2</dd>
+  <dt>Question 3 (click for answer)</dt>
+    <dd class="answer">Answer 3</dd>
+</dl>
+
+</body>
+
+</html>

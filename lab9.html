@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Alicia Lab 9</title>
+  <meta charset="utf-8">
+</head>
+<body>	
+
+<script type="text/javascript">
+
+var w=window.open('','', 'width=100,height=100');
+
+w.setTimeout(function() { w.resizeTo(500,500); }, 1000);
+
+w.document.write("Width = " + screen.width + "<br>");
+w.document.write("<br>");
+
+w.document.write("The appName is: " + navigator.appName +"<br>");
+w.document.write("<br>");
+w.document.write("The appVersion is: " + navigator.appVersion +"<br>");
+w.document.write("<br>");
+w.document.write("The userAgent is: " + navigator.userAgent +"<br>");
+w.document.write("<br>");
+w.document.write("The language is: " + navigator.language +"<br>");
+w.document.write("<br>");
+w.document.write("The platform is: " + navigator.platform +"<br>");
+
+w.document.body.style.color = "#B3B3B3";
+
+if (screen.colorDepth<=8) 
+w.document.body.style.background="#0000FF";
+else
+w.document.body.style.background="#363058";
+
+
+ </script>
+
+</body>
+</html>

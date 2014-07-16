@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Alicia Lab 8</title>
+  <meta charset="utf-8">
+</head>
+<body>	
+
+<script type="text/javascript">
+
+myWindow = window.open("", "Win", "height=400,width=400,left=400,top=200");
+myWindow.document.write("<script language='JavaScript'>");
+myWindow.document.write("function close() {");
+myWindow.document.write("myWindow.opener.close();");
+myWindow.document.write("}");
+myWindow.document.write("function close1(){");
+myWindow.document.write("windowmovie.close();");
+myWindow.document.write("}");
+myWindow.document.write("function close2(){");
+myWindow.document.write("windowactor.close();");
+myWindow.document.write("}");
+myWindow.document.write("function windowopen1(){");
+myWindow.document.write("windowmovie = window.open('http://www.imdb.com/title/tt0499549/', 'windowmovie', 'height=400,width=400,left=400,top=100');");
+myWindow.document.write("}");
+myWindow.document.write("function windowopen2(){");
+myWindow.document.write("windowactor = window.open('http://www.imdb.com/name/nm0941777/?ref_=tt_ov_st', 'windowactor', 'height=400,width=400,left=400,top=100');");
+myWindow.document.write("}");
+myWindow.document.write("<\/script>");
+myWindow.document.write("<p>Alicia's Favorite Movie</p>");
+myWindow.document.write("<p>Avatar</p>");
+myWindow.document.write("<a href='javascript:close();'>Close Window</a><br>");
+myWindow.document.write("<a href='javascript:windowopen1();'>Go to the movie info</a><br>");
+myWindow.document.write("<a href='javascript:windowopen2();'>Go to see the lead actor</a><br>");
+myWindow.document.write("<a href='javascript:close1();'>Close the movie info</a><br>");
+myWindow.document.write("<a href='javascript:close2();'>Close the actor info</a><br>");
+
+ </script>
+
+</body>
+</html>

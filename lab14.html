@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Alicia Lab 14</title>
+  <meta charset="utf-8">
+
+</head>
+
+<body style="background-color: yellow;">
+
+<h2>My Age</h2>
+
+<script type="text/javascript">
+
+var month = prompt("What month were you born in?");
+var day = prompt("What day were you born?");
+var year = prompt("What year were you born in?");
+
+var now = new Date();
+document.write("Today is: ", new Date().toLocaleString());
+document.write("<br />");
+
+document.write("I was born on " + month + " " + day + ", " + year + ".");
+document.write("<br />");
+
+var bornDate = new Date(year, month - 1, day, 0, 0, 0);
+var diffDate = Date.now() - bornDate;
+
+var num_days = Math.floor(diffDate / (24 * 60 * 60 * 1000));
+var num_hours = Math.floor((diffDate - num_days * (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
+var num_minutes = Math.floor((diffDate - num_days * (24 * 60 * 60 * 1000) - num_hours * (60 * 60 * 1000)) / (60 * 1000));
+var num_seconds = Math.floor((diffDate - num_days * (24 * 60 * 60 * 1000) - num_hours * (60 * 60 * 1000) - num_minutes * (60 * 1000)) / (1000));
+
+var num_years_old = Math.floor(diffDate / (365 * 24 * 60 * 60  * 1000));
+if (Date.now() < new Date(now.getFullYear(), month - 1, day)) {
+	var birthdayDate = new Date(now.getFullYear(), month - 1, day, 0, 0, 0);
+} else {
+	var birthdayDate = new Date(now.getFullYear() + 1, month - 1, day, 0, 0, 0);
+}
+var bdiffDate = birthdayDate - Date.now();
+
+var num_bdays = Math.floor(bdiffDate / (24 * 60 * 60 * 1000));
+var num_bhours = Math.floor((bdiffDate - num_bdays * (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
+var num_bminutes = Math.floor((bdiffDate - num_bdays * (24 * 60 * 60 * 1000) - num_bhours * (60 * 60 * 1000)) / (60 * 1000));
+var num_bseconds = Math.floor((bdiffDate - num_bdays * (24 * 60 * 60 * 1000) - num_bhours * (60 * 60 * 1000) - num_bminutes * (60 * 1000)) / (1000));
+
+
+document.write("I am " + num_years_old + " years old and will turn " + (num_years_old + 1) + " in: <br /> " );
+document.write( + num_bdays + " days, " + num_bhours + " hours, " + num_bminutes +  " minutes, " + num_bseconds + " seconds. <br />");
+document.write("I've been alive for " + num_days + " days, " + num_hours + " hours, " + num_minutes +  " minutes, " + num_seconds + " seconds.");
+
+
+</script>
+
+</body>
+
+</html>
